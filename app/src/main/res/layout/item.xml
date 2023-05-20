@@ -9,48 +9,50 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="#5D484B4B"
-        android:elevation="0.5dp"
-        android:padding="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#18AEAEAD"
+        android:elevation="1mm"
+        android:padding="10dp"
         android:layout_marginBottom="50dp"
         android:layout_gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="5dp"
             android:orientation="vertical">
-
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/img"
                 style="@style/softCorner"/>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
-                android:background="@drawable/buttonback">
+                android:padding="5dp"
+                android:background="@drawable/buttonback1">
 
                 <ImageView
                     android:id="@+id/upsImage"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:padding="10dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="5dp"
                     android:src="@drawable/baseline_thumb_up_off_alt_24" />
 
                 <TextView
                     android:id="@+id/ups"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="10dp"
+                    android:padding="5dp"
                     android:textSize="20sp"
-                    android:hint="53"
+                    android:textStyle="bold"
+                    android:hint="50"
                     android:textColor="@color/black" />
             </LinearLayout>
 
@@ -58,7 +60,7 @@
                 android:id="@+id/endLine"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
-                android:src="@drawable/gradient" />
+                android:src="@color/black" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

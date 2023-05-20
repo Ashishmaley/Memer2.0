@@ -15,7 +15,7 @@
     </style>
     <style name="softCorner">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerRadius">20dp</item>
+        <item name="cornerRadius">300dp</item>
         <item name="color">@color/white</item>
     </style>
 </resources>

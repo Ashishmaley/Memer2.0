@@ -52,7 +52,7 @@
                     android:padding="5dp"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:hint="50"
+                    android:hint="@string/_50"
                     android:textColor="@color/black" />
             </LinearLayout>
 
@@ -62,6 +62,8 @@
                 android:layout_height="5dp"
                 android:src="@color/black" />
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

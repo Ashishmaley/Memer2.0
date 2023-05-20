@@ -7,15 +7,10 @@
         <item name="colorOnPrimary">#4CBEBE</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#4B4A4A</item>
-        <item name="colorSecondaryVariant">#7D7C7C</item>
+        <item name="colorSecondaryVariant">#1F1F1F</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-    </style>
-    <style name="softCorner">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerRadius">300dp</item>
-        <item name="color">@color/white</item>
     </style>
 </resources>

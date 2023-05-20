@@ -10,14 +10,15 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/img"/>
+            app:layout_constraintTop_toTopOf="parent" />
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -42,8 +43,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:outlineAmbientShadowColor="@color/white"
-                android:outlineSpotShadowColor="@color/white"
                 android:visibility="visible" />
 
             <androidx.cardview.widget.CardView
@@ -81,9 +80,10 @@
                             android:id="@+id/ups"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="17"
+                            android:hint="@string/_17"
+                            android:textStyle="bold"
                             android:padding="10dp"
-                            android:textColor="@color/teal_700"
+                            android:textColorHint="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
 
@@ -129,9 +129,10 @@
 
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="3"
+                            android:hint="@string/_3"
+                            android:textColorHint="@color/black"
+                            android:textStyle="bold"
                             android:padding="10dp"
-                            android:textColor="@color/teal_700"
                             android:textSize="20sp" />
                     </LinearLayout>
 
@@ -155,7 +156,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:backgroundTint="#6ECD74"
-            android:text="Refresh"
+            android:text="@string/refresh"
             android:textColor="@color/teal_700"
             android:layout_margin="20dp"
             android:background="@drawable/buttonback"
@@ -163,7 +164,9 @@
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="@+id/linearLayout" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

@@ -3,11 +3,11 @@
     <style name="Theme.ApiMaster" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#CCFF90</item>
-        <item name="colorPrimaryVariant">#80D8FF</item>
+        <item name="colorPrimaryVariant">#F680D8FF</item>
         <item name="colorOnPrimary">#4CBEBE</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#4B4A4A</item>
-        <item name="colorSecondaryVariant">#7D7C7C</item>
+        <item name="colorSecondary">#0D0C0C</item>
+        <item name="colorSecondaryVariant">#0A0A0A</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>

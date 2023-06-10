@@ -37,18 +37,10 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:context=".MainActivity">
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:visibility="visible" />
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="350dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:layout_marginTop="20dp"
@@ -60,35 +52,84 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <LinearLayout
+                    android:padding="5dp"
+                    android:orientation="vertical">
+                    <ProgressBar
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:background="@drawable/buttonback">
+                        android:layout_gravity="center"
+                        android:layout_marginTop="80dp"
+                        android:visibility="visible" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        style="@style/softCorner"/>
 
-                        <ImageView
-                            android:id="@+id/upsImage"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:padding="10dp"
-                            android:src="@drawable/baseline_thumb_up_off_alt_24" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="120dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/buttonback1">
 
-                        <TextView
-                            android:id="@+id/ups"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:hint="@string/_17"
-                            android:textStyle="bold"
-                            android:padding="10dp"
-                            android:textColorHint="@color/black"
-                            android:textSize="20sp" />
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="10dp"
+                                android:padding="5dp"
+                                android:src="@drawable/save"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="5dp"
+                                android:textSize="20sp"
+                                android:textStyle="italic"
+                                android:textColorHint="#3A3A39"
+                                android:hint="@string/Save"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9dp"
+                            android:layout_margin="10dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/buttonback">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_height="40dp"
+                                android:padding="5dp"
+                                android:src="@drawable/share"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="5dp"
+                                android:textSize="20sp"
+                                android:textStyle="italic"
+                                android:textColorHint="#3A3A39"
+                                android:hint="@string/Share"
+                                />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/endLine"
                         android:layout_width="match_parent"
                         android:layout_height="5dp"
                         android:src="@color/black" />
@@ -98,7 +139,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="350dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:layout_marginTop="20dp"
@@ -110,30 +151,79 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <LinearLayout
+                    android:padding="5dp"
+                    android:orientation="vertical">
+                    <ProgressBar
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:background="@drawable/buttonback">
+                        android:layout_gravity="center"
+                        android:layout_marginTop="80dp"
+                        android:visibility="visible" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        style="@style/softCorner"/>
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:padding="10dp"
-                            android:src="@drawable/baseline_thumb_up_off_alt_24" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="120dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/buttonback1">
 
-                        <TextView
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="10dp"
+                                android:padding="5dp"
+                                android:src="@drawable/save"/>
 
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:hint="@string/_3"
-                            android:textColorHint="@color/black"
-                            android:textStyle="bold"
-                            android:padding="10dp"
-                            android:textSize="20sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="5dp"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:hint="@string/Save"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9dp"
+                            android:layout_margin="10dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/buttonback">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_height="40dp"
+                                android:padding="5dp"
+                                android:src="@drawable/share"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="5dp"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:hint="@string/Share"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
                     </LinearLayout>
 
                     <ImageView
@@ -155,11 +245,13 @@
             android:id="@+id/refreshButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:backgroundTint="#6ECD74"
+            android:backgroundTint="#8AF991"
             android:text="@string/refresh"
-            android:textColor="@color/teal_700"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            android:textColor="@color/black"
             android:layout_margin="20dp"
-            android:background="@drawable/buttonback"
+            android:background="@drawable/buttonback2"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout"

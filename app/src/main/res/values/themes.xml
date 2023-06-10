@@ -2,15 +2,20 @@
     <!-- Base application theme. -->
     <style name="Theme.ApiMaster" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#CEF89D</item>
-        <item name="colorPrimaryVariant">#80D8FF</item>
+        <item name="colorPrimary">#CCFF90</item>
+        <item name="colorPrimaryVariant">#F680D8FF</item>
         <item name="colorOnPrimary">#4CBEBE</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#4B4A4A</item>
-        <item name="colorSecondaryVariant">#1F1F1F</item>
+        <item name="colorSecondary">#0D0C0C</item>
+        <item name="colorSecondaryVariant">#2D2C2C</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+    <style name="softCorner">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerRadius">300dp</item>
+        <item name="color">@color/white</item>
     </style>
 </resources>

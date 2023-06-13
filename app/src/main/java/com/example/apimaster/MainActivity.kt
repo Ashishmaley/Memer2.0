@@ -1,37 +1,47 @@
 package com.example.apimaster
 
+import CacheManager
+import android.app.Dialog
+import android.app.ProgressDialog
 import android.content.ContentValues.TAG
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.LinearLayoutCompat.OrientationMode
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.gms.ads.AdError
-import com.google.android.gms.ads.AdRequest.*
-import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.AdRequest.Builder
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-import retrofit2.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.File
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var adView : AdView
     private var mInterstitialAd: InterstitialAd? = null
     private lateinit var myAdapter: MyAdapter
     private lateinit var refreshButton: Button
     private lateinit var recyclerView: RecyclerView
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
-    private lateinit var progressBar: ProgressBar
     private lateinit var cardu: CardView
     private lateinit var cardv: CardView
+    private lateinit var cacheManager: CacheManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,9 +55,49 @@ class MainActivity : AppCompatActivity() {
         }
         refreshButton.setOnClickListener {
             showAdd()
+            cacheManager = CacheManager(this)
+            fetchData()
         }
-
     }
+
+    // Function to fetch data from the server
+//    private fun fetchDataFromServer() {
+//        // Perform the API request to fetch data from the server
+//
+//        // Once the response is received, check the cache size
+//        cacheManager.checkCacheSize()
+//
+//        // Process and cache the fetched data
+//        // ...
+//    }
+//
+//    // Function to retrieve data from the cache
+//    private fun retrieveDataFromCache() {
+//        // Check if the data exists in the cache and is not expired
+//        // If the data is available and not expired, retrieve it from the cache
+//        // ...
+//
+//        // If the data is not available or expired, fetch it from the server
+//        fetchDataFromServer()
+//    }
+//
+//
+//
+//    fun isInternetOff(context: Context): Boolean {
+//        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            val network = connectivityManager.activeNetwork ?: return true
+//            val networkCapabilities = connectivityManager.getNetworkCapabilities(network) ?: return true
+//
+//            return !networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+//        } else {
+//            val activeNetworkInfo = connectivityManager.activeNetworkInfo ?: return true
+//
+//            return !activeNetworkInfo.isConnected
+//        }
+//    }
+
 
     private fun showAdd() {
         if (mInterstitialAd!=null)
@@ -70,12 +120,19 @@ class MainActivity : AppCompatActivity() {
            fetchData()
         }
     }
+
     private fun fetchData() {
         cardu = findViewById(R.id.cardView)
         cardv = findViewById(R.id.cardView2)
+//        val isIt = isInternetOff(this)
+//        if (!isIt)
+//        {
+//           val dialog = ProgressDialog(this)
+//            dialog.setMessage("Check your Internet")
+//            dialog.setCancelable(false)
+//        }
+
         recyclerView = findViewById(R.id.recyclerView)
-        progressBar = findViewById(R.id.progressBar)
-        progressBar.visibility = View.VISIBLE
         cardu.visibility = View.VISIBLE
         cardv.visibility = View.VISIBLE
         val retrofitBuilder = Retrofit.Builder()
@@ -88,7 +145,6 @@ class MainActivity : AppCompatActivity() {
 
         retrofitData.enqueue(object : Callback<MemeData?> {
             override fun onResponse(call: Call<MemeData?>, response: Response<MemeData?>) {
-                progressBar.visibility = View.GONE
                 cardu.visibility = View.GONE
                 cardv.visibility = View.GONE
                 recyclerView.visibility = View.VISIBLE
@@ -103,16 +159,17 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<MemeData?>, t: Throwable) {
-                progressBar.visibility = View.GONE
                 Log.d("Main Activity", "OnFailure: " + t.message)
                 swipeRefreshLayout.isRefreshing = false // Mark the refresh as complete
             }
         })
+
+
     }
 
     private fun intersAdd() {
 
-        var adRequest = Builder().build()
+        val adRequest = Builder().build()
 
         InterstitialAd.load(
             this,
@@ -120,7 +177,7 @@ class MainActivity : AppCompatActivity() {
             adRequest,
             object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
-                    adError?.toString()?.let { Log.d(TAG, it) }
+                    adError.toString().let { Log.d(TAG, it) }
                     mInterstitialAd = null
                 }
 
@@ -131,6 +188,8 @@ class MainActivity : AppCompatActivity() {
             })
 
     }
+
+
 }
 
 

@@ -70,8 +70,8 @@
                     android:layout_height="match_parent"
                     android:padding="5dp"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:hint="@string/Save"
+                    android:textStyle="italic"
+                    android:text="@string/Save"
                     android:textColor="@color/black"
                     />
             </LinearLayout>
@@ -97,8 +97,8 @@
                     android:layout_height="match_parent"
                     android:padding="5dp"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:hint="@string/Share"
+                    android:textStyle="italic"
+                    android:text="@string/Share"
                     android:textColor="@color/black"
                     />
             </LinearLayout>

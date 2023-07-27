@@ -1,6 +1,6 @@
 # Memer2.0
 Updating old project memer<br/>
-to New One using custom recycleView and Api call using retrofit, <br/>
+to New One using custom recycleView, Api call using retrofit and Firebase, <br/>
 published On Amazon store:- <a href="https://www.amazon.com/dp/B0C7NZ9LGH/ref=apps_sf_sta">Memer</a>
 <br/>
 <br/>

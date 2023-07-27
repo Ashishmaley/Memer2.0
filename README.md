@@ -1,6 +1,10 @@
 # Memer2.0
-updating old project memer 
-to New One.
+Updating old project memer<br/>
+to New One using custom recycleView and Api call using retrofit, <br/>
+published On Amazon store:- <a href="https://www.amazon.com/dp/B0C7NZ9LGH/ref=apps_sf_sta">Memer</a>
+<br/>
+<br/>
+
 
 <p>
    <h1>Snaps</h1>
